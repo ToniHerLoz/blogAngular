@@ -1,0 +1,21 @@
+
+  <article *ngFor="let t of topics" class="post">
+    <header>
+      <div class="title">
+        <h2>{{t.title | uppercase}}</h2>
+      </div>
+      <div class="meta">
+        <time class="published">{{t.created | date:'medium'}}</time>
+        <a href="#" class="author"><span class="name">{{t.author}}</span><img src="images/avatar.jpg" alt="" /></a>
+      </div>
+    </header>
+    <a class="image featured"><img src={{getAvatar(t)}} alt="" /></a>
+    <p>{{t.content | slice:0:250 }}...</p>
+    <footer>
+      <ul class="actions">
+        <li><a routerLink="/topic/{{t.id}}" class="button large">Continue Reading</a></li>
+      </ul>
+    </footer>
+  </article>
+
+

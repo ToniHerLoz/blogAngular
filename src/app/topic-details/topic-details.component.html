@@ -1,0 +1,18 @@
+<article class="post">
+    <header>
+      <div class="title">
+        <h2><a href="single.html">{{t.title | uppercase}}</a></h2>
+      </div>
+      <div class="meta">
+        <time class="published">{{t.created | date:'medium'}}</time>
+        <a href="#" class="author"><span class="name">{{t.author}}</span><img src="images/avatar.jpg" alt="" /></a>
+      </div>
+    </header>
+    <a href="single.html" class="image featured"><img src={{getAvatar(t)}} alt="" /></a>
+    <p>{{t.content}}</p>
+    <footer>
+      <ul class="actions">
+        <button (click)="goBack()">go back</button>
+      </ul>
+    </footer>
+</article>
